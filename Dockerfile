@@ -40,6 +40,9 @@ COPY --from=build --chown=openmeteo:openmeteo /build/Public /app/Public
 RUN mkdir /app/data && chown openmeteo:openmeteo /app/data
 VOLUME /app/data
 
+########## ADDED ENV VARIABLES
+ENV API_BIND="0.0.0.0:8080"
+
 # Ensure all further commands run as the openmeteo user
 USER openmeteo:openmeteo
 
